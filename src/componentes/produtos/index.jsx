@@ -27,6 +27,18 @@ export default function Produtos() {
                     <Carrinho setMostraCarrinho={setMostraCarrinho} />
                 </div>
             )}
+            <div className="listaDeProdutos">
+                {produtos.map((produto, index) => (
+                        <div key={index} className="produto">
+                            <img src={produto.imagem} alt={produto.nome} />
+                            <p>{produto.nome}</p>
+                            <p>{produto.valor.toFixed(2)}</p>
+                            <button onClick={() => addCarrinho(produto)}>
+                                Adicionar ao carrinho
+                            </button>
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 }
