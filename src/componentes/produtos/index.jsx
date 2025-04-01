@@ -17,11 +17,16 @@ export default function Produtos() {
             <div className="botaoCarrinho">
                 <button onClick={() => setMostraCarrinho(true)}>
                     <BsCart2 size={25} />
-                    <span className="quantidadeCarrinho">{cartList.length}</span>
+                    <span className="quantidadeCarrinho">
+                        {cartList.length}
+                    </span>
                 </button>
             </div>
-            
+            {mostraCarrinho && (
+                <div>
+                    <Carrinho setMostraCarrinho={setMostraCarrinho} />
+                </div>
+            )}
         </div>
-
-    )
+    );
 }
