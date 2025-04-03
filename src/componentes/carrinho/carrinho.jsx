@@ -1,17 +1,20 @@
 import React from "react";
 import Close from "../../assets/icons/Close.svg";
-import ImgMonitor from "../../assets/imagens/product-image-monitor.jpg";
+import "./carrinho.css";
 
-export default function Carrinho({ setMostraCarrinho, cartList }) {
+export default function Carrinho({ setMostraCarrinho, cartList, setCartList }) {
+    function calcularTotal() {
+        return cartList.reduce((total, item) => total + item.valor * item.quantidade, 0);
+    }
+
     return (
-        <>
         <div className="container">
             <div className="carrinho">
                 <div className="carrinho-header">
                     <p>
                         Seu carrinho tem <strong>{cartList.length} items</strong>
                     </p>
-                    <button onClick={() => setMostraCarrinho(false)}>
+                    <button className="botaoFechar" onClick={() => setMostraCarrinho(false)}>
                         <img src={Close} alt="Fechar carrinho" />
                     </button>
                 </div>
@@ -34,9 +37,9 @@ export default function Carrinho({ setMostraCarrinho, cartList }) {
                                             -
                                         </button>
                                         <p>
-                                            <b>1</b>
+                                            <b>{item.quantidade}</b>
                                         </p>
-                                        <button className="carrinho-items-info-quantidade-2">
+                                        <button className="carrinho-items-info-quantidade-2" onClick={() => item.quantidade++}>
                                             +
                                         </button>
                                     </div>
@@ -49,7 +52,7 @@ export default function Carrinho({ setMostraCarrinho, cartList }) {
                     <div className="carrinho-footer-total">
                         <p>Total:</p>
                         <p className="valor-total">
-                            <b>R$ 10.681,70</b>
+                            <b>R$ {calcularTotal().toFixed(2)}</b>
                         </p>
                     </div>
                     <button className="carrinho-footer-finalizar">
@@ -58,6 +61,5 @@ export default function Carrinho({ setMostraCarrinho, cartList }) {
                 </div>
             </div>
         </div>
-        </>
     );
 }

@@ -1,14 +1,7 @@
-* {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    box-sizing: border-box;
-}
-
 .container {
     display: flex;
     justify-content: flex-end;
-    position: fixed;
+    position:absolute;
 }
 
 .carrinho {
@@ -40,6 +33,12 @@
 
 .carrinho-header img {
     padding-right: 24px;
+}
+
+.botaoFechar {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .carrinho-center {

@@ -1,6 +1,5 @@
 import './App.css'
-import Carrinho from './componentes/carrinho'
-import Produtos from './componentes/produtos'
+import Produtos from './componentes/produtos/produtos.jsx'
 
 export default function App() {
     return (
