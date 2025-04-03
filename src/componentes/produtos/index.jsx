@@ -14,26 +14,28 @@ export default function Produtos() {
 
     return (
         <div className="conteinerProdutos">
-            <div className="botaoCarrinho">
-                <button onClick={() => setMostraCarrinho(true)}>
-                    <BsCart2 size={25} />
-                    <span className="quantidadeCarrinho">
-                        {cartList.length}
-                    </span>
-                </button>
-            </div>
+            {!mostraCarrinho && 
+                <div className="botaoCarrinho">
+                    <button onClick={() => setMostraCarrinho(true)}>
+                        <BsCart2 size={25} />
+                        <span className="quantidadeCarrinho">
+                            {cartList.length}
+                        </span>
+                    </button>
+                </div>
+            }
             {mostraCarrinho && (
                 <div>
-                    <Carrinho setMostraCarrinho={setMostraCarrinho} />
+                    <Carrinho setMostraCarrinho={setMostraCarrinho} cartList={cartList} />
                 </div>
             )}
             <div className="listaDeProdutos">
                 {produtos.map((produto, index) => (
                         <div key={index} className="produto">
                             <img src={produto.imagem} alt={produto.nome} />
-                            <p>{produto.nome}</p>
-                            <p>{produto.valor.toFixed(2)}</p>
-                            <button onClick={() => addCarrinho(produto)}>
+                            <p className="nomeProduto">{produto.nome}</p>
+                            <p className="valorProduto">R${produto.valor.toFixed(2)}</p>
+                            <button className="botaoAddCarrinho" onClick={() => addCarrinho(produto)}>
                                 Adicionar ao carrinho
                             </button>
                         </div>
