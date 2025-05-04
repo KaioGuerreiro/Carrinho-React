@@ -1,10 +1,10 @@
 import './App.css'
-import Produtos from './componentes/produtos/produtos.jsx'
+import Routers from './components/routers/index.jsx'
 
 export default function App() {
     return (
         <>
-            <Produtos/>
+            <Routers/>
         </>
     )
   
