@@ -1,11 +1,144 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+* {
+    box-sizing: border-box;
+    font-family: roboto;
 }
 
-h1 {
-    font-size: 2rem;
-    color: #333;
+body {
+    color: #9333EA;
+    background-color: #111827;
+    padding-top: 1%;
+    margin: none;
+}
+
+p {
+    font-size: small;
+    color: grey;
+}
+
+.full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+.left {
+    border-radius: 10px;
+    width: 45%;
+    padding-left: 5%;
+    padding-right: 3%;
+    background-color: #1E1E1E;
+}
+
+.text-left {
+    font-size: x-large;
+    margin-right: 40%;
+}
+
+.conteainer-input {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 35%;
+}
+
+.label-login {
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #9333EA;
+    border-radius: 5px;
+}
+
+.input:active, .input:focus-visible{
+    border: none;
+    outline: none;
+
+}
+
+.input:focus {
+    border-left: 4px solid #7E22CE;
+    border-right: 2px solid #7E22CE;
+    border-top: 2px solid #7E22CE;
+    border-bottom: 2px solid #7E22CE;
+    width: 100%;
+
+}
+
+.input-check {
+    margin: 0px;
+    padding: 0px;
+    padding-inline: 0px;
+    margin-inline: 0px;
+}
+
+.input-remenber {
+    font-size: small;
+    color: grey;
+}
+
+.input-remenber:hover {
+    color: #9333EA;
+    cursor: pointer;
+}
+
+.div-check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.div-check-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-login {
+    background-color: #9333EA;
+    
+    color: white;
+    padding: 4%;
+    appearance: none;
+    border: none;
+    margin-right: 4%;
+    border-radius: 15px;
+    transition-duration: 200ms;
+}
+
+.button-sign {
+    border: 2px solid #9333EA;
+    background-color: none;
+    color: #9333EA;
+    padding: 4%;
+    border-radius: 15px;
+    transition-duration: 200ms;
+}
+
+.button-sign-a {
+    width: 100%;
+}
+
+.button-login:hover, .button-sign:hover{
+    cursor: pointer;
+    transition-duration: 200ms;
+    transform: scale(1.15);
+}
+
+.div-buttons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 20%;
+}
+
+.top-left {
+    display: flex;
+    margin-top: 5%;
+    font-size: medium;
 }
