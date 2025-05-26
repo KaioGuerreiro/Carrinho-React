@@ -27,16 +27,18 @@ export default function Produtos() {
     return (
         <div className="conteinerProdutos">
             <div className="listaDeProdutos">
-                {produtos.map((produto, index) => (
-                        <div key={index} className="produto">
-                            <img src={produto.imagem} alt={produto.nome} />
-                            <p className="nomeProduto">{produto.nome}</p>
-                            <p className="valorProduto">R${produto.valor.toFixed(2)}</p>
-                            <button className="botaoAddCarrinho" onClick={() => addCarrinho(produto)}>
-                                Adicionar ao carrinho
-                            </button>
-                        </div>
-                    ))}
+                {produtos.map((produto, index) => {
+                    return (
+                    <div key={index} className="produto">
+                        <img src={produto.imagem} alt={produto.nome} />
+                        <p className="nomeProduto">{produto.nome}</p>
+                        <p className="valorProduto">R${produto.valor.toFixed(2)}</p>
+                        <button className="botaoAddCarrinho" onClick={() => addCarrinho(produto)}>
+                            Adicionar ao carrinho
+                        </button>
+                    </div>
+                    );
+                })}
             </div>
             {!mostraCarrinho && 
                 <div className="botaoCarrinho">
