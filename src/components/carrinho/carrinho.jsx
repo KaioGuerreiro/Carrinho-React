@@ -1,6 +1,5 @@
 import React from "react";
 import Close from "../../assets/icons/Close.svg";
-import "./carrinho.css";
 
 export default function Carrinho({ setMostraCarrinho, cartList, setCartList }) {
     function calcularTotal() {

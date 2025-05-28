@@ -1,8 +1,11 @@
 import React from "react";
-import "./login.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router";
 import { AuthContexto } from "../../components/contexto/auth.jsx";
+import "@material/web/button/elevated-button.js";
+import "@material/web/button/filled-button.js";
+import "@material/web/textfield/outlined-text-field.js";
+import "@material/web/checkbox/checkbox.js";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -11,43 +14,33 @@ export default function Login() {
 
   function login() {
     setAuth(true);
-    navigate("/produtos");
+    navigate("/home");
   }
 
   return (
-    <div className="full">
-      <div className="left">
+    <div className="flex items-center justify-center bg-black h-screen">
+      <div className="flex flex-col rounded-lg items-center justify-center w-1/3 h-1/2 bg-neutral-900">
         <div className="top-left">
-          <h2 className="h1-title-left">Kabum</h2>
+          <p className="font-bold text-2xl text-amber-50">Unigran</p>
         </div>
 
-        <p>Bem vindo! Por favor faça login em sua conta.</p>
-        <div className="conteainer-input">
-          <label className="label-login">Login</label>
-          <input className="input" type="email" placeholder="Email Address" />
-          <input className="input" type="password" placeholder="Password" />
-          <div className="div-check">
-            <div className="div-check-input">
-              <input
-                className="input-check"
-                type="checkbox"
-                name="remember"
-                id="remember"
-              />
-              <label className="input-remenber">Remember me</label>
+        <p className="text-2xl text-amber-50">Bem vindo! Por favor faça login em sua conta.</p>
+        <div className="flex flex-col items-center justify-center m-6">
+          <label className="font-bold text-2xl text-amber-50">Login</label>
+          <md-outlined-text-field className="m-4" type="email" label="Email">
+          </md-outlined-text-field>
+          <md-outlined-text-field type="password" label="Password">
+          </md-outlined-text-field>
+          <div>
+            <div className="flex items-center justify-center m-4">
+              <md-checkbox checked></md-checkbox>
+              <label className="text-amber-50 pl-2">Remember me</label>
             </div>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius">
-              <p>Forgot Password?</p>
-            </a>
           </div>
-          <div className="div-buttons">
-            <button onClick={() => login()} className="button-login" type="submit">
-              Login
-            </button>
-            <a className="button-sign-a" href="/criarLogin">
-              <button className="button-sign" type="button">
-                Sign Up
-              </button>
+          <div>
+            <md-elevated-button onClick={() => login()} className="p-5 m-2 font-bold">Login</md-elevated-button>
+            <a href="/criar-conta">
+              <md-filled-button className="p-5 m-2">Sign Up</md-filled-button>
             </a>
           </div>
         </div>

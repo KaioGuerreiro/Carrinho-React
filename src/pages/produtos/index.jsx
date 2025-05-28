@@ -1,6 +1,5 @@
 import React from "react";
 import Carrinho from "../../components/carrinho/carrinho.jsx";
-import "./produtos.css";
 import { produtos } from "./produtos.js";
 import { BsCart2 } from "react-icons/bs";
 
