@@ -14,13 +14,13 @@ export default function Home() {
         <p onClick={() => navigate("/home/remover")} className="text-xl text-amber-50 hover:cursor-pointer">Remover</p>
       </div>
       <div className="w-5/6 h-screen flex flex-col items-center bg-neutral-800">
-        <div className="flex flex-col items-center justify-center p-5">
+        <div className="flex flex-col items-center justify-center pt-8">
           <h1 className="text-2xl text-amber-50 font-bold">
             Bem vindo ao painel!
           </h1>
           <p className="text-amber-50">Selecione uma opção no menu lateral.</p>
         </div>
-        <div>
+        <div className="w-full h-full flex items-center justify-center bg-radial">
           <Outlet />
         </div>
       </div>
