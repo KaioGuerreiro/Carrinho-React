@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 import { DataContext } from "../../components/contexto/data";
 import { LerProdutos } from "../../components/data/fetchProdutos";
@@ -6,10 +6,10 @@ import { useEffect } from "react";
 
 export default function Listar() {
   const navigate = useNavigate();
-
+  const { setProdutos } = useContext(DataContext);
   const { produtos } = React.useContext(DataContext);
   useEffect(() => {
-    LerProdutos();
+    LerProdutos(setProdutos);
   }, []);
 
   return (

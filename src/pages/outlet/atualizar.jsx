@@ -1,17 +1,20 @@
 import React from "react";
 import { AtualizarProduto } from "../../components/data/fetchProdutos";
 import { LerProdutos } from "../../components/data/fetchProdutos";
+import { useContext } from "react";
+import { DataContext } from "../../components/contexto/data";
 
 export default function Atualizar() {
   const [itemId, setItemId] = React.useState("");
   const [itemName, setItemName] = React.useState("");
   const [itemValue, setItemValue] = React.useState("");
   const [itemImg, setItemImg] = React.useState("");
+  const { setProdutos } = useContext(DataContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await AtualizarProduto(itemId, itemName, parseFloat(itemValue), itemImg);
-    LerProdutos();
+    LerProdutos(setProdutos);
     console.log("Item atualizado:", {
       id: itemId,
       name: itemName,

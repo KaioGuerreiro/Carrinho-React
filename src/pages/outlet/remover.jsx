@@ -1,13 +1,16 @@
 import React from "react";
 import { DeletarProduto } from "../../components/data/fetchProdutos";
 import { LerProdutos } from "../../components/data/fetchProdutos";
+import { useContext } from "react";
+import { DataContext } from "../../components/contexto/data";
 
 export default function Remover() {
   const [itemId, setItemId] = React.useState("");
+  const { setProdutos } = useContext(DataContext);
   const handleSubmit = async (e) => {
     e.preventDefault();
     await DeletarProduto(itemId);
-    LerProdutos();
+    LerProdutos(setProdutos);
     console.log("Item removido:", itemId);
     setItemId(""); // Limpa o campo após a remoção
   };

@@ -1,16 +1,20 @@
 import React from "react";
 import { CriarProduto } from "../../components/data/fetchProdutos";
 import { LerProdutos } from "../../components/data/fetchProdutos";
+import { DataContext } from "../../components/contexto/data";
+import { useContext } from "react";
 
 export default function Criar() {
   const [itemName, setItemName] = React.useState("");
   const [itemValue, setItemValue] = React.useState("");
   const [itemImg, setItemImg] = React.useState("");
+  const { setProdutos } = useContext(DataContext);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await CriarProduto(itemName, parseFloat(itemValue), itemImg);
-    LerProdutos();
+    LerProdutos(setProdutos);
   };
 
   return (
